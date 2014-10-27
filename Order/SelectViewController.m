@@ -52,7 +52,7 @@
     
     if(section==0){
 //        return [[listdata objectAtIndex:0]allKeys].count;
-        return (7-(array.count));
+        return (self.listdata.count);
     }
     if (section==1) {
         return  array.count;
@@ -82,50 +82,17 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
 
     
-    
     UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 85, 20)];
-//    label1.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"1"];
     [cell addSubview:label1];
-    
-    UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(10, 50, 85, 20)];
-//    label2.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"3"];
-       // label2.textColor = [UIColor redColor];
-    [cell addSubview:label2];
-    
-    UILabel *label3=[[UILabel alloc]initWithFrame:CGRectMake(70, 50, 85, 20)];
-//    label3.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"2"];
-    [cell addSubview:label3];
-        
-    UILabel *label4=[[UILabel alloc]initWithFrame:CGRectMake(180, 30, 85, 20)];
-        //    label3.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"2"];
-        [cell addSubview:label4];
-        
-        
-        UILabel *label5=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 85, 20)];
-        //    label3.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"2"];
-        [cell addSubview:label5];
-    
+       
     if (indexPath.section == 0) {
-//        UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 85, 20)];
-//        NSString *strRow = [NSString stringWithFormat:@"%d",(int)(indexPath.row + 1)];
-//        label1.text=[[self.listdata objectAtIndex:0] objectForKey:strRow];
-//        NSLog(@"%@",[[self.listdata objectAtIndex:0] objectForKey:strRow]);
-//        NSLog(@"%@",listdata);
-//        NSLog(@"%@",strRow);
-//        [cell addSubview:label1];
-//            UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 85, 20)];
-//            label1.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"1"];
-//        NSLog(@"%@",label1.text);
-//            [cell addSubview:label1];
-//        
-//            UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(10, 30, 85, 20)];
-//            label2.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"3"];
-//            [cell addSubview:label2];
-//        
-//            UILabel *label3=[[UILabel alloc]initWithFrame:CGRectMake(10, 20, 85, 20)];
-//            label3.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"2"];
-//            [cell addSubview:label3];
-        //if (indexPath.row == 0) {
+        
+        UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(10, 50, 85, 20)];
+        [cell addSubview:label2];
+        UILabel *label3=[[UILabel alloc]initWithFrame:CGRectMake(70, 50, 85, 20)];
+        [cell addSubview:label3];
+        UILabel *label4=[[UILabel alloc]initWithFrame:CGRectMake(180, 30, 85, 20)];
+        [cell addSubview:label4];
         
         label1.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"1"];
         label2.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"2"];
@@ -133,22 +100,15 @@
         label3.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"3"];
         label4.text=[[self.listdata objectAtIndex:indexPath.row] objectForKey:@"4"];
         NSString *a=label4.text;
-        
         int b=[[a substringWithRange:NSMakeRange(1, 2)]intValue];
         
-        if(b>25){
-            label4.textColor=[UIColor redColor];
+        if(b>25)   label4.textColor=[UIColor redColor];
             
-        }
 
-        
-       // }
     }
     else if(indexPath.section == 1)
-    {
-                label5.text=[self.array objectAtIndex:indexPath.row];
+        label1.text=[self.array objectAtIndex:indexPath.row];
         
-    }
     
     }
     return cell;

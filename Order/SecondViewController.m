@@ -17,6 +17,7 @@
 @synthesize price;
 @synthesize filename;
 @synthesize muarry;
+@synthesize button_ok;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"订餐";
@@ -38,11 +39,12 @@
     UIButton *button_people=[self createbuttion:CGRectMake(10, 170, 350, 30) :@"选人"];
     UIButton *button_restaurant=[self createbuttion:CGRectMake(10, 320, 350, 30) :@"选餐厅"];
     UIButton *button_package=[self createbuttion:CGRectMake(10, 470, 350, 30) :@"选套餐"];
-    UIButton *button_ok=[self createbuttion:CGRectMake(10, 520, 350, 30) :@"确认"];
+    button_ok=[self createbuttion:CGRectMake(10, 520, 350, 30) :@"确认"];
     [button_people addTarget:self action:@selector(click_people:) forControlEvents:UIControlEventTouchUpInside];
     [button_restaurant addTarget:self action:@selector(click_restaurant:) forControlEvents:UIControlEventTouchUpInside];
     [button_package addTarget:self action:@selector(click_package:) forControlEvents:UIControlEventTouchUpInside];
     [button_ok addTarget:self action:@selector(click_ok:) forControlEvents:UIControlEventTouchUpInside];
+    
     //lable1.text=@"人";
     //lable1.textColor = [UIColor blackColor];
     //UILabel *lable2=[[UILabel alloc]initWithFrame:CGRectMake(10, 120, 60, 30)];
@@ -117,6 +119,10 @@
 }
 
 -(void)click_ok:(id)sender{
+    
+    if (m_labelpeople.text == nil || m_labelrestaurant.text == nil || m_labelpackage.text == nil)
+        return;
+    
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
 //    NSMutableArray *temp=[[NSMutableArray alloc]initWithContentsOfFile:appDelegate.filename];
@@ -130,7 +136,12 @@
     [temp addObject:dic];
     [NSKeyedArchiver archiveRootObject:temp toFile:appDelegate.filename];
     
-    [self.navigationController popToRootViewControllerAnimated:true];
+    
+    m_labelpeople.text=nil;
+    m_labelrestaurant.text=nil;
+    m_labelpackage.text=nil;
+    
+    
     
 //    BOOL success = [temp writeToFile:appDelegate.filename atomically:YES];
 //    if (!success) {

@@ -22,4 +22,5 @@
 @property NSArray *price;
 @property NSString *filename;
 @property NSMutableArray *muarry;
+@property UIButton *button_ok;
 @end
