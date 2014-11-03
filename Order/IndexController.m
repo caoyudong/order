@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 cyd. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "IndexController.h"
 
-@interface ViewController ()
+@interface IndexController ()
 
 @end
 
-@implementation ViewController
+@implementation IndexController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,12 +36,12 @@
 }
 
 -(void)click1:(id)sender{
-    SecondViewController *secondviewcontroller=[SecondViewController new];
+    HelpOrderController *secondviewcontroller=[HelpOrderController new];
     [self.navigationController pushViewController:secondviewcontroller animated:true];
 }
 
 -(void)click2:(id)sender{
-    SelectViewController *selectviewcontrol=[SelectViewController new];
+    SelectListController *selectviewcontrol=[SelectListController new];
     [self.navigationController pushViewController:selectviewcontrol animated:true];
 }
 //

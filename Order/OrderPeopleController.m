@@ -1,57 +1,59 @@
 //
-//  ThirdViewController2.m
+//  ThirdViewController1.m
 //  Order
 //
 //  Created by cyd on 14-10-17.
 //  Copyright (c) 2014年 cyd. All rights reserved.
 //
 
-#import "ThirdViewController2.h"
+#import "OrderPeopleController.h"
 
-@interface ThirdViewController2 ()
+@interface OrderPeopleController ()
 
 @end
 
-@implementation ThirdViewController2
-@synthesize listdata;
+@implementation OrderPeopleController
+@synthesize arraypeoplelistdata;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"选餐厅";
-    uitableview=[[UITableView alloc]initWithFrame:
+    self.title=@"选人";
+    m_orderpeopleuitableview=[[UITableView alloc]initWithFrame:
                  CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width,[[UIScreen mainScreen] bounds].size.height) style:UITableViewStylePlain];
     
     
-    NSArray *nsarry=[[NSArray alloc]initWithObjects:@"KFC",@"必胜客",@"傣妹", nil];
-    listdata=nsarry;
-    uitableview.dataSource=self;
-    uitableview.delegate=self;
+    arraypeoplelistdata=[[NSArray alloc]initWithObjects:@"汪涵",
+                         @"欧弟",@"钱枫",@"田源",@"浩二",@"小五",@"俞灏明", nil];
     
-    [self.view addSubview:uitableview];
+    m_orderpeopleuitableview.dataSource=self;
+    m_orderpeopleuitableview.delegate=self;
+    
+    [self.view addSubview:m_orderpeopleuitableview];
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return listdata.count;
+    return arraypeoplelistdata.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    OrderPeoView *orderpeoview=[[OrderPeoView alloc]init];
     NSString *identify = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
-        UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 200, 20)];
-        label.text=[self.listdata objectAtIndex:indexPath.row];
-        [cell addSubview:label];
+        [orderpeoview creatxy:cell :indexPath :self.arraypeoplelistdata];
         
     }
-    return cell;
+        return cell;
 }
 
+
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"restaurant" object:[self.listdata objectAtIndex:indexPath.row]];
-[self.navigationController popViewControllerAnimated:YES];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"people" object:[self.arraypeoplelistdata objectAtIndex:indexPath.row]];
+    [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

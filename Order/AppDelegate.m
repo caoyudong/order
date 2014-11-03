@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    ViewController *viewcontroller=[ViewController new];
+    IndexController *viewcontroller=[IndexController new];
     UINavigationController *uinavigationcontroller=[[UINavigationController alloc]initWithRootViewController:viewcontroller];
     self.window.rootViewController=uinavigationcontroller;
     [self.window makeKeyAndVisible];
@@ -27,17 +27,6 @@
     NSString *path=[paths objectAtIndex:0];
    NSLog(@"%@",path);
     self.filename=[path stringByAppendingPathComponent:@"test.plist"];
-    
-    
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    if(![fileManager fileExistsAtPath:self.filename]){
-////        NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:0];
-////        BOOL success = [array writeToFile:self.filename atomically:YES];
-//       BOOL success = [fileManager createFileAtPath:filename contents:nil attributes:nil];
-//        if (!success) NSLog(@"create failed");
-//    }
-    
-    
     return YES;
 }
 
