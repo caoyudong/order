@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "HelpOrderController.h"
 #import "SelectListModel.h"
-#import "SelectListView.h"
+
 @interface SelectListController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     UITableView *m_selectTableView;
 

@@ -37,13 +37,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    OrderPeoView *orderpeoview=[[OrderPeoView alloc]init];
+
     NSString *identify = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
-        [orderpeoview creatxy:cell :indexPath :self.arraypeoplelistdata];
-        
+        UILabel *labelpeo=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 200, 20)];
+        labelpeo.text=[arraypeoplelistdata objectAtIndex:indexPath.row];
+        [cell addSubview:labelpeo];
     }
         return cell;
 }

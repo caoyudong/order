@@ -35,13 +35,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    OrderRestauView *orderrestauview=[[OrderRestauView alloc]init];
     NSString *identify = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
         
-        [orderrestauview creatxy:cell :indexPath :self.arrayreslistdata];
+        UILabel *labelres=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 200, 20)];
+        labelres.text=[arrayreslistdata objectAtIndex:indexPath.row];
+        [cell addSubview:labelres];
         
     }
     return cell;

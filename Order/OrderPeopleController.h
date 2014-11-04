@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "HelpOrderController.h"
-#import "OrderPeoView.h"
 @interface OrderPeopleController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     UITableView *m_orderpeopleuitableview;
     

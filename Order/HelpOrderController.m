@@ -28,7 +28,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     m_helporderview = [[HelpOrderView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [m_helporderview setPeopleWithTarget:self andSEL:@selector(click_people:)];
     [m_helporderview setRestaurantWithTarget:self andSEL:@selector(click_restaurant:)];

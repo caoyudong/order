@@ -7,15 +7,12 @@
 //
 
 #import "OrderPacgeController.h"
-#import "OrderPacgeView.h"
+
 @interface OrderPacgeController ()
 
 @end
 
 @implementation OrderPacgeController
-@synthesize listdataone;
-@synthesize listdatatwo;
-@synthesize listdatathree;
 @synthesize message;
 - (id)init :(NSString *)strRestaurant
 {
@@ -43,60 +40,40 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if ([message isEqualToString:@"KFC"]) {
-        return listdataone.count;
-    }
-    else if ([message isEqualToString:@"傣妹"]){
-        return listdatatwo.count;
-    }
-    else{
-        return listdatathree.count;
-    }
+    return [[dic_list objectForKey:message] count];
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    OrderPacgeView *orderPacgeView = [[OrderPacgeView alloc]init];
     NSString *identify = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
         
-        if ([message isEqualToString:@"KFC"]){
-
-            [orderPacgeView creatxy:cell :indexPath :listdataone];
-        }
-        
-        else if ([message isEqualToString:@"傣妹"]){
-
-            [orderPacgeView creatxy:cell :indexPath :listdatatwo];
-        }
-        
-        else{
-            [orderPacgeView creatxy:cell :indexPath :listdatathree];
-        }
-        
+        [self creatxy:cell :indexPath :[dic_list objectForKey:message]];
         
     }
     return  cell;
 }
 
+-(void)creatxy:(UITableViewCell *)cel :(NSIndexPath *)indexpath :(NSArray *)listdt
+{
+    
+    UILabel *labelpro=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 85, 20)];
+    labelpro.text=[[listdt objectAtIndex:indexpath.row]objectForKey:@"product"];
+    [cel addSubview:labelpro];
+    
+    UILabel *labelpri=[[UILabel alloc] initWithFrame:CGRectMake(10, 30, 50, 20)];
+    labelpri.text=[[listdt objectAtIndex:indexpath.row]objectForKey:@"price"];
+    [cel addSubview:labelpri];
+    
+}
+
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([message isEqualToString:@"KFC"]){
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"package" object:[self.listdataone objectAtIndex:indexPath.row]];
-        [self.navigationController popViewControllerAnimated:YES];}
-    
-    else if ([message isEqualToString:@"傣妹"]){
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"package" object:[self.listdatatwo objectAtIndex:indexPath.row]];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    
-    else{
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"package" object:[self.listdatathree objectAtIndex:indexPath.row]];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    
+
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"package" object:[[dic_list objectForKey:message] objectAtIndex:indexPath.row]];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,9 +98,11 @@
     NSDictionary *dic9=[[NSDictionary alloc]initWithObjectsAndKeys:@"虾肉披萨",@"product", @"¥48",@"price",nil];
     
     
-    self.listdataone=[[NSArray alloc]initWithObjects:dic1,dic2,dic3, nil];
-    self.listdatatwo=[[NSArray alloc]initWithObjects:dic4,dic5,dic6, nil];
-    self.listdatathree=[[NSArray alloc]initWithObjects:dic7,dic8,dic9, nil];
+    NSArray *listdata1=[[NSArray alloc]initWithObjects:dic1,dic2,dic3, nil];
+    NSArray *listdata2=[[NSArray alloc]initWithObjects:dic4,dic5,dic6, nil];
+    NSArray *listdata3=[[NSArray alloc]initWithObjects:dic7,dic8,dic9, nil];
+    
+    dic_list = [[NSDictionary alloc]initWithObjectsAndKeys:listdata1,@"KFC",listdata2,@"傣妹",listdata3,@"必胜客", nil];
 }
 
 

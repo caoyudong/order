@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D4301EC1A00BA6D008E5805 /* OrderPacgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4301EB1A00BA6D008E5805 /* OrderPacgeView.m */; };
 		0D4301EF1A00DE00008E5805 /* SelectListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4301EE1A00DE00008E5805 /* SelectListModel.m */; };
 		0D94BB8319FF6B2500AF85E5 /* HelpOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D94BB8219FF6B2500AF85E5 /* HelpOrderModel.m */; };
 		0D956E6219F65C3500CBAD17 /* SelectListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D956E6119F65C3500CBAD17 /* SelectListController.m */; };
@@ -15,9 +14,7 @@
 		0D95993419F10D1E00799A25 /* OrderRestauController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D95993319F10D1E00799A25 /* OrderRestauController.m */; };
 		0D95993719F11DCC00799A25 /* OrderPacgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D95993619F11DCC00799A25 /* OrderPacgeController.m */; };
 		0D9749ED1A01E15800D9DB6D /* HelpOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9749EC1A01E15800D9DB6D /* HelpOrderView.m */; };
-		0D9758181A07653400D103DA /* SelectListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9758171A07653400D103DA /* SelectListView.m */; };
-		0D97D5F71A0325210095961B /* OrderPeoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D97D5F61A0325210095961B /* OrderPeoView.m */; };
-		0D97D5FD1A0339D00095961B /* OrderRestauView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D97D5FC1A0339D00095961B /* OrderRestauView.m */; };
+		0D97581B1A077E1C00D103DA /* IndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D97581A1A077E1C00D103DA /* IndexView.m */; };
 		0D988B5919EFA0A2008D8E3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D988B5819EFA0A2008D8E3D /* main.m */; };
 		0D988B5C19EFA0A2008D8E3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D988B5B19EFA0A2008D8E3D /* AppDelegate.m */; };
 		0D988B5F19EFA0A2008D8E3D /* IndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D988B5E19EFA0A2008D8E3D /* IndexController.m */; };
@@ -39,8 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D4301EA1A00BA6D008E5805 /* OrderPacgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPacgeView.h; sourceTree = "<group>"; };
-		0D4301EB1A00BA6D008E5805 /* OrderPacgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPacgeView.m; sourceTree = "<group>"; };
 		0D4301ED1A00DE00008E5805 /* SelectListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectListModel.h; sourceTree = "<group>"; };
 		0D4301EE1A00DE00008E5805 /* SelectListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectListModel.m; sourceTree = "<group>"; };
 		0D94BB8119FF6B2500AF85E5 /* HelpOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpOrderModel.h; sourceTree = "<group>"; };
@@ -55,12 +50,8 @@
 		0D95993619F11DCC00799A25 /* OrderPacgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPacgeController.m; sourceTree = "<group>"; };
 		0D9749EB1A01E15800D9DB6D /* HelpOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpOrderView.h; sourceTree = "<group>"; };
 		0D9749EC1A01E15800D9DB6D /* HelpOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpOrderView.m; sourceTree = "<group>"; };
-		0D9758161A07653400D103DA /* SelectListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectListView.h; sourceTree = "<group>"; };
-		0D9758171A07653400D103DA /* SelectListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectListView.m; sourceTree = "<group>"; };
-		0D97D5F51A0325210095961B /* OrderPeoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPeoView.h; sourceTree = "<group>"; };
-		0D97D5F61A0325210095961B /* OrderPeoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPeoView.m; sourceTree = "<group>"; };
-		0D97D5FB1A0339D00095961B /* OrderRestauView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderRestauView.h; sourceTree = "<group>"; };
-		0D97D5FC1A0339D00095961B /* OrderRestauView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderRestauView.m; sourceTree = "<group>"; };
+		0D9758191A077E1C00D103DA /* IndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexView.h; sourceTree = "<group>"; };
+		0D97581A1A077E1C00D103DA /* IndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexView.m; sourceTree = "<group>"; };
 		0D988B5319EFA0A2008D8E3D /* Order.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Order.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D988B5719EFA0A2008D8E3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D988B5819EFA0A2008D8E3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,16 +90,10 @@
 		0D4301E91A00B72A008E5805 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				0D4301EA1A00BA6D008E5805 /* OrderPacgeView.h */,
-				0D4301EB1A00BA6D008E5805 /* OrderPacgeView.m */,
 				0D9749EB1A01E15800D9DB6D /* HelpOrderView.h */,
 				0D9749EC1A01E15800D9DB6D /* HelpOrderView.m */,
-				0D97D5F51A0325210095961B /* OrderPeoView.h */,
-				0D97D5F61A0325210095961B /* OrderPeoView.m */,
-				0D97D5FB1A0339D00095961B /* OrderRestauView.h */,
-				0D97D5FC1A0339D00095961B /* OrderRestauView.m */,
-				0D9758161A07653400D103DA /* SelectListView.h */,
-				0D9758171A07653400D103DA /* SelectListView.m */,
+				0D9758191A077E1C00D103DA /* IndexView.h */,
+				0D97581A1A077E1C00D103DA /* IndexView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -296,17 +281,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D4301EF1A00DE00008E5805 /* SelectListModel.m in Sources */,
-				0D97D5FD1A0339D00095961B /* OrderRestauView.m in Sources */,
 				0D956E6219F65C3500CBAD17 /* SelectListController.m in Sources */,
 				0D9749ED1A01E15800D9DB6D /* HelpOrderView.m in Sources */,
 				0D95993719F11DCC00799A25 /* OrderPacgeController.m in Sources */,
 				0D95993119F0F65900799A25 /* OrderPeopleController.m in Sources */,
-				0D97D5F71A0325210095961B /* OrderPeoView.m in Sources */,
 				0D988B7E19EFB9FB008D8E3D /* HelpOrderController.m in Sources */,
 				0D988B5F19EFA0A2008D8E3D /* IndexController.m in Sources */,
-				0D9758181A07653400D103DA /* SelectListView.m in Sources */,
+				0D97581B1A077E1C00D103DA /* IndexView.m in Sources */,
 				0D94BB8319FF6B2500AF85E5 /* HelpOrderModel.m in Sources */,
-				0D4301EC1A00BA6D008E5805 /* OrderPacgeView.m in Sources */,
 				0D95993419F10D1E00799A25 /* OrderRestauController.m in Sources */,
 				0D988B5C19EFA0A2008D8E3D /* AppDelegate.m in Sources */,
 				0D988B5919EFA0A2008D8E3D /* main.m in Sources */,

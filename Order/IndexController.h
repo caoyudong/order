@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "HelpOrderController.h"
 #import "SelectListController.h"
+#import "IndexView.h"
 @interface IndexController : UIViewController
 
 {
-    UITableView *uitableview;
 }
 
 

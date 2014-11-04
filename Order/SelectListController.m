@@ -38,7 +38,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if(section==0){
-//        return [[listdata objectAtIndex:0]allKeys].count;
+
         return (self.arraylocaldata.count);
     }
     if (section==1) {
@@ -64,47 +64,45 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    SelectListView *selectlistview=[SelectListView new];
-    NSString *identify = @"cell";
+    NSString *identify = [NSString stringWithFormat:@"cell%ld",indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
-
+    }
     
     UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, 85, 20)];
     [cell addSubview:label1];
        
     if (indexPath.section == 0) {
-        [selectlistview creatxy:cell :indexPath :label1 :self.arraylocaldata];
+        
+        UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(10, 50, 85, 20)];
+        [cell addSubview:label2];
+        UILabel *label3=[[UILabel alloc]initWithFrame:CGRectMake(70, 50, 85, 20)];
+        [cell addSubview:label3];
+        UILabel *label4=[[UILabel alloc]initWithFrame:CGRectMake(180, 30, 85, 20)];
+        [cell addSubview:label4];
+        
+        label1.text=[[arraylocaldata objectAtIndex:indexPath.row] objectForKey:@"1"];
+        label2.text=[[arraylocaldata objectAtIndex:indexPath.row] objectForKey:@"2"];
+        
+        label3.text=[[arraylocaldata objectAtIndex:indexPath.row] objectForKey:@"3"];
+        label4.text=[[arraylocaldata objectAtIndex:indexPath.row] objectForKey:@"4"];
+        NSString *a=label4.text;
+        int b=[[a substringWithRange:NSMakeRange(1, 2)]intValue];
+        
+        if(b>42)   label4.textColor=[UIColor redColor];
+        
+
 
     }
     else if(indexPath.section == 1)
         label1.text=[self.arraypeoplelist objectAtIndex:indexPath.row];
         
     
-    }
+//    }
     return cell;
 }
 
-//-(void)creatxy:(UITableViewCell *)cel :(NSIndexPath *)indexpath :(UILabel *)label{
-//    UILabel *label2=[[UILabel alloc]initWithFrame:CGRectMake(10, 50, 85, 20)];
-//    [cel addSubview:label2];
-//    UILabel *label3=[[UILabel alloc]initWithFrame:CGRectMake(70, 50, 85, 20)];
-//    [cel addSubview:label3];
-//    UILabel *label4=[[UILabel alloc]initWithFrame:CGRectMake(180, 30, 85, 20)];
-//    [cel addSubview:label4];
-//    
-//    label.text=[[self.arraylocaldata objectAtIndex:indexpath.row] objectForKey:@"1"];
-//    label2.text=[[self.arraylocaldata objectAtIndex:indexpath.row] objectForKey:@"2"];
-//    
-//    label3.text=[[self.arraylocaldata objectAtIndex:indexpath.row] objectForKey:@"3"];
-//    label4.text=[[self.arraylocaldata objectAtIndex:indexpath.row] objectForKey:@"4"];
-//    NSString *a=label4.text;
-//    int b=[[a substringWithRange:NSMakeRange(1, 2)]intValue];
-//    
-//    if(b>25)   label4.textColor=[UIColor redColor];
-//    
-//}
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

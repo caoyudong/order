@@ -10,10 +10,8 @@
 
 @interface OrderPacgeController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     UITableView *m_orderpacuitableview;
+    NSDictionary *dic_list;
 }
-@property NSArray *listdataone;
-@property NSArray *listdatatwo;
-@property NSArray *listdatathree;
 @property NSString *message;
 - (id)init :(NSString *)strRestaurant;
 @end
